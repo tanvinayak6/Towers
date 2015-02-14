@@ -30,10 +30,16 @@ public class Towers {
 	 * @param startPole - pole the discs start on (zero based)
 	 * @param endPole - pole the discs end on (zero based)
 	 */
-	public static void solveTowers(int numDiscs, int startPole, int endPole) {
-
-	}
-	
+	 public static void solveTowers(int numDiscs, int startPole, int endPole) {
+     	if(numDiscs >=1)
+     	{	
+       		solveTowers(numDiscs-1, startPole, poles-(endPole+startPole));
+		 moveDisc(startPole, endPole);
+       		solveTowers(numDiscs-1, poles-(startPole+endPole), endPole);
+       
+     	}
+     
+ 	}
 	/**
 	 * Moves a disc from one pole the another pole
 	 * @param fromPole - pole to move the disc from
